@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.AdminController">
+   <children>
+      <AnchorPane prefHeight="42.0" prefWidth="1119.0" styleClass="header" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <stylesheets>
+            <URL value="@../css/Admin.css" />
+            <URL value="@../resource/Admin.css" />
+         </stylesheets>
+         <children>
+            <Label fx:id="fullName1" layoutX="1038.0" layoutY="6.0" prefHeight="31.0" prefWidth="81.0" text="Admin">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="42.4" prefHeight="651.0" prefWidth="232.0" styleClass="header" stylesheets="@../resource/Admin.css" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="42.0">
+         <children>
+            <AnchorPane layoutX="2.0" layoutY="143.0" prefHeight="497.0" prefWidth="230.0" styleClass="header1" AnchorPane.bottomAnchor="0.1999999999999318" AnchorPane.leftAnchor="0.799999999999983" AnchorPane.rightAnchor="0.4000000000000057" AnchorPane.topAnchor="142.39999999999998">
+               <children>
+                  <Button fx:id="btnHome" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#narBar" prefHeight="31.0" prefWidth="190.0" text="Home " AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.99999999999997" />
+                  <Button fx:id="btnProduct" layoutX="20.0" layoutY="66.0" mnemonicParsing="false" onAction="#narBar" prefHeight="31.0" prefWidth="190.0" text="Products" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.99999999999997" />
+                  <Button layoutX="20.0" layoutY="347.0" mnemonicParsing="false" onAction="#Orders" prefHeight="31.0" prefWidth="190.0" text="Orders" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="289.0" mnemonicParsing="false" onAction="#Chip" prefHeight="31.0" prefWidth="190.0" text="Chip" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="btnStaff" layoutX="20.0" layoutY="122.0" mnemonicParsing="false" onAction="#narBar" prefHeight="31.0" prefWidth="190.0" text="Staff" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="174.0" mnemonicParsing="false" onAction="#Category" prefHeight="31.0" prefWidth="190.0" text="Categorys" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button layoutX="20.0" layoutY="232.0" mnemonicParsing="false" onAction="#Area" prefHeight="31.0" prefWidth="190.0" text="Areas" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+                  <Button fx:id="logOut" layoutX="20.0" layoutY="431.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="31.0" prefWidth="190.0" text="LogOut" AnchorPane.bottomAnchor="34.600000000000065" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1.0" prefHeight="144.0" prefWidth="231.0" styleClass="header1" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Line endX="100.0" layoutX="129.0" layoutY="141.0" startX="-129.00001525878906" startY="1.399993896484375" />
+                  <ImageView fitHeight="100.0" fitWidth="108.0" layoutX="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Icon/icons8-delete-90.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="fullName" layoutX="16.0" layoutY="100.0" prefHeight="22.0" prefWidth="190.0" text="Tao đẹp trai">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="home" layoutX="232.0" layoutY="37.0" prefHeight="657.0" prefWidth="890.0" stylesheets="@../css/Admin.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="37.0">
+         <children>
+            <AnchorPane prefHeight="338.0" prefWidth="890.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="249.0" fitWidth="363.0" layoutX="334.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="42.19999999999999" AnchorPane.topAnchor="47.0">
+                     <image>
+                        <Image url="@../image/Icon/icons8-mobile-wallet-100.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="337.0" prefHeight="314.0" prefWidth="890.0" styleClass="filter" AnchorPane.leftAnchor="-0.1999999999999318" AnchorPane.rightAnchor="-0.1999999999999318">
+               <children>
+                  <TextArea layoutX="87.2" layoutY="47.0" prefHeight="144.0" prefWidth="726.0" styleClass="filter" stylesheets="@../css/Admin.css" text="The Apple Store shop is located at the Software Technology Center of Can Tho University, a paradise for smartphone enthusiasts, offering a wide range of phones from world-famous brands such as Iphone, Sam Sung, Vivo,... Immerse yourself in the world of advanced technology and beautiful design at our store. Discover the latest products of the store meticulously displayed for you to enjoy. Immerse yourself in the quality and innovation of products at the Apple Store. Step into the Apple Store to begin your journey of discovering excellence and innovation." wrapText="true" AnchorPane.bottomAnchor="123.19999999999999" AnchorPane.leftAnchor="87.00000000000011" AnchorPane.rightAnchor="76.60000000000002" AnchorPane.topAnchor="47.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="product" layoutX="227.0" layoutY="42.0" prefHeight="651.0" prefWidth="890.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="42.0">
+         <children>
+            <AnchorPane layoutY="-6.0" prefHeight="307.0" prefWidth="883.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="153.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="59.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+<!--                        <Image url="@../image/Icon/icons8-mobile-wallet-100%20(1).png" />-->
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="productSearch" layoutX="242.0" layoutY="37.0" prefHeight="31.0" prefWidth="271.0" />
+                  <Label layoutX="144.0" layoutY="32.0" prefHeight="42.0" prefWidth="90.0" text="Product">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtProductName" layoutX="238.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" />
+                  <TextField fx:id="txtPrice" layoutX="394.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" AnchorPane.topAnchor="123.0" />
+                  <TextField fx:id="txtStock" layoutX="560.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" AnchorPane.topAnchor="123.0" />
+                  <ComboBox fx:id="comBoxChip" layoutX="560.0" layoutY="197.0" prefHeight="23.0" prefWidth="114.0" />
+                  <ComboBox fx:id="comBoxCategory" layoutX="238.0" layoutY="191.0" prefHeight="23.0" prefWidth="114.0" />
+                  <Button layoutX="721.0" layoutY="196.0" mnemonicParsing="false" onAction="#addImages" prefHeight="30.0" prefWidth="108.0" text="Add images" />
+                  <Button layoutX="394.0" layoutY="256.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="114.0" text="Cancel" />
+                  <Button layoutX="238.0" layoutY="256.0" mnemonicParsing="false" onAction="#addProducts" prefHeight="23.0" prefWidth="114.0" text="Save" />
+                  <Label layoutX="242.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="Product name" />
+                  <Label fx:id="txtArea" layoutX="396.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="Area" />
+                  <Label layoutX="396.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="Price" />
+                  <Label layoutX="560.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="Stock" />
+                  <Label fx:id="txtChip" layoutX="560.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="Chip" />
+                  <Label fx:id="txtCategory" layoutX="242.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="Category" />
+                  <ComboBox fx:id="comBoxArea" layoutX="394.0" layoutY="191.0" prefHeight="23.0" prefWidth="114.0" />
+                  <Button layoutX="718.0" layoutY="256.0" mnemonicParsing="false" onAction="#deleteStaffAction" prefHeight="23.0" prefWidth="114.0" text="Delete" />
+                  <Button layoutX="560.0" layoutY="256.0" mnemonicParsing="false" onAction="#updateProducts" prefHeight="23.0" prefWidth="114.0" text="Update" />
+                  <ImageView fx:id="images_add" fitHeight="128.0" fitWidth="136.0" layoutX="707.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="513.0" layoutY="37.0" mnemonicParsing="false" onAction="#searchProducts" prefHeight="30.0" prefWidth="34.0" />
+                  <FontAwesomeIcon glyphName="SEARCH" layoutX="524.0" layoutY="56.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="303.2" prefHeight="338.0" prefWidth="883.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="303.0">
+               <children>
+                  <TableView fx:id="productTable" layoutX="14.0" layoutY="11.0" prefHeight="314.0" prefWidth="853.0" styleClass="header1" stylesheets="@../resource/Admin.css" AnchorPane.bottomAnchor="12.199999999999989" AnchorPane.leftAnchor="14.200000000000045" AnchorPane.rightAnchor="14.600000000000023" AnchorPane.topAnchor="11.0">
+                    <columns>
+                      <TableColumn fx:id="productTableID" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="productTableName" prefWidth="75.20001983642578" text="Name" />
+                        <TableColumn fx:id="productTablePrice" prefWidth="75.20001983642578" text="Price" />
+                        <TableColumn fx:id="productTableStock" prefWidth="75.20001983642578" text="Stock" />
+                        <TableColumn fx:id="productTableCategory" prefWidth="75.20001983642578" text="Category" />
+                        <TableColumn fx:id="productTableArea" prefWidth="75.20001983642578" text="Area" />
+                        <TableColumn fx:id="productTableChip" prefWidth="75.20001983642578" text="Chip" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="staff" layoutX="232.0" layoutY="38.0" prefHeight="657.0" prefWidth="883.0" visible="false" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="38.0">
+         <children>
+            <AnchorPane layoutY="-6.0" prefHeight="307.0" prefWidth="883.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="153.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="61.0" fitWidth="68.0" layoutX="59.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+<!--                        <Image url="@../image/Icon/icons8-mobile-wallet-100%20(1).png" />-->
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="staffSearch" layoutX="242.0" layoutY="37.0" prefHeight="31.0" prefWidth="271.0" />
+                  <Label layoutX="161.0" layoutY="32.0" prefHeight="42.0" prefWidth="70.0" text="Staff">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtFullname" layoutX="238.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" />
+                  <TextField fx:id="txtPhone" layoutX="394.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" AnchorPane.topAnchor="123.0" />
+                  <TextField fx:id="txtAddress" layoutX="560.0" layoutY="123.0" prefHeight="30.0" prefWidth="114.0" AnchorPane.topAnchor="123.0" />
+                  <ComboBox fx:id="comBoxRole" layoutX="560.0" layoutY="197.0" prefHeight="23.0" prefWidth="114.0" />
+                  <Button layoutX="394.0" layoutY="256.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="114.0" text="Cancel" />
+                  <Button layoutX="238.0" layoutY="256.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="23.0" prefWidth="114.0" text="Save" />
+                  <Label layoutX="242.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="Full name" />
+                  <Label fx:id="Password" layoutX="396.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="password" />
+                  <Label layoutX="396.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="Phone" />
+                  <Label layoutX="560.0" layoutY="91.0" prefHeight="20.0" prefWidth="114.0" text="address" />
+                  <Label fx:id="txtChip1" layoutX="560.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="Role" />
+                  <Label fx:id="txtCategory1" layoutX="242.0" layoutY="165.0" prefHeight="20.0" prefWidth="114.0" text="Email" />
+                  <Button layoutX="718.0" layoutY="256.0" mnemonicParsing="false" onAction="#deleteStaff" prefHeight="23.0" prefWidth="114.0" text="Delete" />
+                  <Button layoutX="560.0" layoutY="256.0" mnemonicParsing="false" onAction="#updateStaff" prefHeight="23.0" prefWidth="114.0" text="Update" />
+                  <ImageView fx:id="images_add1" fitHeight="128.0" fitWidth="136.0" layoutX="707.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="513.0" layoutY="37.0" mnemonicParsing="false" onAction="#searchStaff" prefHeight="30.0" prefWidth="34.0" />
+                  <FontAwesomeIcon glyphName="SEARCH" layoutX="524.0" layoutY="56.0" />
+                  <TextField fx:id="txtEmail" layoutX="238.0" layoutY="194.0" prefHeight="30.0" prefWidth="114.0" />
+                  <TextField fx:id="txtPassword" layoutX="396.0" layoutY="194.0" prefHeight="30.0" prefWidth="114.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="303.2" prefHeight="338.0" prefWidth="883.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="303.0">
+               <children>
+                  <TableView fx:id="staffTable" layoutX="14.0" layoutY="11.0" prefHeight="314.0" prefWidth="853.0" styleClass="header1" stylesheets="@../resource/Admin.css" AnchorPane.bottomAnchor="12.199999999999989" AnchorPane.leftAnchor="14.200000000000045" AnchorPane.rightAnchor="14.600000000000023" AnchorPane.topAnchor="11.0">
+                     <columns>
+                        <TableColumn fx:id="staffTableID" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="staffTableFullName" prefWidth="75.20001983642578" text="Full name" />
+                        <TableColumn fx:id="staffTablePhone" prefWidth="75.20001983642578" text="Phone" />
+                        <TableColumn fx:id="staffTableAddress" prefWidth="75.20001983642578" text="Address" />
+                        <TableColumn fx:id="staffTableEmail" prefWidth="75.20001983642578" text="Emaill" />
+                        <TableColumn fx:id="staffTablePassword" prefWidth="75.20001983642578" text="Password" />
+                        <TableColumn fx:id="staffTableRole" prefWidth="75.20001983642578" text="Role" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

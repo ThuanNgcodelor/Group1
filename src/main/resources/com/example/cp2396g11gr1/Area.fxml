@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="646.0" stylesheets="@../resource/Admin.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.AreaController">
+   <children>
+      <AnchorPane layoutY="-2.0" prefHeight="500.0" prefWidth="640.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+         <children>
+            <AnchorPane layoutX="335.0" layoutY="1.0" prefHeight="496.0" prefWidth="310.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+               <children>
+                  <TextField fx:id="areaName" layoutX="40.0" layoutY="164.0" prefHeight="40.0" prefWidth="230.0" promptText="Enter the product type" stylesheets="@../resource/Admin.css" />
+                  <Button layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Delete supplier">
+                     <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="nav-btn1" />
+                     </styleClass>
+                  </Button>
+                  <Label layoutX="42.0" layoutY="75.0" prefHeight="46.0" prefWidth="139.0" stylesheets="@../resource/Admin.css" text="Area">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="168.0" layoutY="248.0" mnemonicParsing="false" onAction="#updateArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Update supplier">
+                     <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="nav-btn1" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#addArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Add supplier">
+                     <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="nav-btn1" />
+                     </styleClass>
+                  </Button>
+                  <Button layoutX="168.0" layoutY="314.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Refresh">
+                     <styleClass>
+                        <String fx:value="table-view" />
+                        <String fx:value="nav-btn1" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_area" layoutX="5.0" layoutY="70.0" prefHeight="422.0" prefWidth="330.0" stylesheets="@../resource/Admin.css">
+               <columns>
+                  <TableColumn fx:id="table_AreaID" prefWidth="107.99994039535522" text="AreaID" />
+                  <TableColumn fx:id="table_areaName" prefWidth="212.7999496459961" text="Name" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TextField fx:id="searchField" layoutX="4.0" layoutY="20.0" prefHeight="35.0" prefWidth="273.0" promptText="Search" stylesheets="@../resource/Admin.css" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
