@@ -63,7 +63,7 @@ public class ProductImple implements ProductDAO{
     @Override
     public boolean addProducts(Products products) {
         try{
-            PreparedStatement statement = conn.prepareStatement("insert into products(productName,price,quantity,image,categoryID,areaID,chipID) values(?,?,?,?,?,?,?)");
+            PreparedStatement statement = conn.prepareStatement("insert into products(productName,price,quantity,image,categoryID,areaID,chipID,supplierID) values(?,?,?,?,?,?,?,?)");
             statement.setString(1, products.getProductName());
             statement.setDouble(2, products.getPrice());
             statement.setInt(3, products.getQuantity());
@@ -71,6 +71,7 @@ public class ProductImple implements ProductDAO{
             statement.setInt(5, products.getCategoryID());
             statement.setInt(6,products.getAreaID());
             statement.setInt(7, products.getChipID());
+            statement.setInt(8, products.getSupplierID());
             int check = statement.executeUpdate();
             return check > 0;
         } catch (Exception e) {
@@ -79,7 +80,7 @@ public class ProductImple implements ProductDAO{
     }
 
     public boolean updateProducts(Products product) {
-        String sql = "UPDATE products SET productName = ?, price = ?, quantity = ?, areaID = ?, categoryID = ?, chipID = ?, image = ? WHERE id = ?";
+        String sql = "UPDATE products SET productName = ?, price = ?, quantity = ?, areaID = ?, categoryID = ?, chipID = ?,supplierID = ?, image = ? WHERE id = ?";
         try (Connection connection = MyConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
@@ -89,8 +90,9 @@ public class ProductImple implements ProductDAO{
             statement.setInt(4, product.getAreaID());
             statement.setInt(5, product.getCategoryID());
             statement.setInt(6, product.getChipID());
-            statement.setString(7, product.getImage());
-            statement.setInt(8, product.getId());
+            statement.setInt(7, product.getSupplierID());
+            statement.setString(8, product.getImage());
+            statement.setInt(9, product.getId());
 
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -117,15 +119,18 @@ public class ProductImple implements ProductDAO{
     @Override
     public List<Products> AllProducts() {
         List<Products> productList = new ArrayList<>();
-        try {
-            String query = "SELECT p.id, p.productName, p.price, p.quantity, p.image, " +
-                    "c.categoryID, a.areaID, ch.chipID, c.categoryName,a.areaName,ch.chipName " +
-                    "FROM products p " +
-                    "INNER JOIN category c ON p.categoryID = c.categoryID " +
-                    "INNER JOIN area a ON p.areaID = a.areaID " +
-                    "INNER JOIN chip ch ON p.chipID = ch.chipID";
-            PreparedStatement statement = conn.prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery();
+        String query = "SELECT p.id, p.productName, p.price, p.quantity, p.image, " +
+                "c.categoryID, a.areaID, ch.chipID, sp.supplierID, " +
+                "c.categoryName, a.areaName, ch.chipName, sp.supplierName " +
+                "FROM products p " +
+                "INNER JOIN category c ON p.categoryID = c.categoryID " +
+                "INNER JOIN area a ON p.areaID = a.areaID " +
+                "INNER JOIN chip ch ON p.chipID = ch.chipID " +
+                "INNER JOIN supplier sp ON p.supplierID = sp. supplierID";
+
+        try (PreparedStatement statement = conn.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+
             while (resultSet.next()) {
                 Products product = new Products();
                 product.setId(resultSet.getInt("id"));
@@ -136,14 +141,16 @@ public class ProductImple implements ProductDAO{
                 product.setCategoryName(resultSet.getString("categoryName"));
                 product.setAreaName(resultSet.getString("areaName"));
                 product.setChipName(resultSet.getString("chipName"));
+                product.setSupplierName(resultSet.getString("supplierName"));
 
                 productList.add(product);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Error retrieving products", e);
         }
         return productList;
     }
+
     @Override
     public void updateProductStock(int productID, int stock) {
         try {

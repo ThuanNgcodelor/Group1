@@ -26,6 +26,12 @@ module com.example.cp2396g11gr1 {
     exports com.example.cp2396g11gr1.model.bill;
 
 
+    opens com.example.cp2396g11gr1.model.supplier to javafx.base;
+    exports com.example.cp2396g11gr1.model.supplier;
+
+    opens com.example.cp2396g11gr1.model.customer to javafx.base;
+    exports com.example.cp2396g11gr1.model.customer;
+
     opens com.example.cp2396g11gr1 to javafx.fxml;
     opens com.example.cp2396g11gr1.main to javafx.fxml;
     exports com.example.cp2396g11gr1.main;

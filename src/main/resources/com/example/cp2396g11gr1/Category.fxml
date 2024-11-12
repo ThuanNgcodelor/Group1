@@ -13,41 +13,26 @@
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="500.0" prefWidth="640.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
          <children>
-            <AnchorPane layoutX="300.0" layoutY="1.0" prefHeight="497.0" prefWidth="260.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+            <AnchorPane layoutX="300.0" layoutY="1.0" prefHeight="496.0" prefWidth="294.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                <children>
                   <TextField fx:id="CategoryName" layoutX="15.0" layoutY="183.0" prefHeight="40.0" prefWidth="230.0" promptText="Enter the category name" stylesheets="@../resource/Admin.css" />
-                  <Button layoutX="143.0" layoutY="271.0" mnemonicParsing="false" onAction="#deleteCategory" prefHeight="35.0" prefWidth="98.0" stylesheets="@../resource/Admin.css" text="Delete">
-                     <styleClass>
-                        <String fx:value="table-view" />
-                        <String fx:value="nav-btn1" />
-                     </styleClass>
-                  </Button>
+                  <Button layoutX="143.0" layoutY="271.0" mnemonicParsing="false" onAction="#deleteCategory" prefHeight="35.0" prefWidth="98.0" styleClass="btn-button1" stylesheets="@../resource/Admin.css" text="Delete" textFill="WHITE" />
                   <Label layoutX="15.0" layoutY="104.0" prefHeight="46.0" prefWidth="139.0" stylesheets="@../resource/Admin.css" text="Category">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Button layoutX="17.0" layoutY="339.0" mnemonicParsing="false" onAction="#updateCategory" prefHeight="35.0" prefWidth="98.0" stylesheets="@../resource/Admin.css" text="Update">
+                  <Button layoutX="17.0" layoutY="339.0" mnemonicParsing="false" onAction="#updateCategory" prefHeight="35.0" prefWidth="98.0" styleClass="btn-button1" stylesheets="@../resource/Admin.css" text="Update" textFill="WHITE" />
+                  <Button layoutX="17.0" layoutY="271.0" mnemonicParsing="false" onAction="#addCategory" prefHeight="35.0" prefWidth="97.0" styleClass="btn-button" stylesheets="@../resource/Admin.css" text="Add" textFill="WHITE" />
+                  <Button layoutX="143.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="98.0" stylesheets="@../resource/Admin.css" text="Refresh" textFill="WHITE">
                      <styleClass>
-                        <String fx:value="table-view" />
-                        <String fx:value="nav-btn1" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="17.0" layoutY="271.0" mnemonicParsing="false" onAction="#addCategory" prefHeight="35.0" prefWidth="97.0" stylesheets="@../resource/Admin.css" text="Add">
-                     <styleClass>
-                        <String fx:value="table-view" />
-                        <String fx:value="nav-btn1" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="143.0" layoutY="339.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="98.0" stylesheets="@../resource/Admin.css" text="Refresh">
-                     <styleClass>
-                        <String fx:value="table-view" />
+                        <String fx:value="btn-button" />
                         <String fx:value="nav-btn1" />
                      </styleClass>
                   </Button>
                </children>
             </AnchorPane>
-            <TableView fx:id="table_category" layoutX="4.0" layoutY="54.0" prefHeight="444.0" prefWidth="346.0" stylesheets="@../resource/Admin.css">
+            <TableView fx:id="table_category" layoutX="4.0" layoutY="54.0" prefHeight="444.0" prefWidth="346.0" styleClass="header1" stylesheets="@../resource/Admin.css">
                <columns>
                   <TableColumn fx:id="table_CategoryID" prefWidth="107.99994039535522" text="CategoryID" />
                   <TableColumn fx:id="table_categoryName" prefWidth="212.7999496459961" text="Category Name" />

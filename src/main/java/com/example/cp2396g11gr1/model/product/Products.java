@@ -9,39 +9,23 @@ public class Products {
     private String categoryName;
     private String areaName;
     private String chipName;
+    private String supplierName;
+
     private int categoryID;
     private int chipID;
     private int areaID;
+    private int supplierID;
 
     private int stockQuantity;
     private int stockSold;
     private double stockAmount;
 
-    public int getStockQuantity() {
-        return stockQuantity;
-    }
+    // Default constructor
+    public Products() {}
 
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
-    }
-
-    public int getStockSold() {
-        return stockSold;
-    }
-
-    public void setStockSold(int stockSold) {
-        this.stockSold = stockSold;
-    }
-
-    public double getStockAmount() {
-        return stockAmount;
-    }
-
-    public void setStockAmount(double stockAmount) {
-        this.stockAmount = stockAmount;
-    }
-
-    public Products(String productName, double price, String image, int quantity, String categoryName, String areaName, String chipName ) {
+    // Constructor with main fields
+    public Products(String productName, double price, String image, int quantity,
+                    String categoryName, String areaName, String chipName, String supplierName) {
         this.productName = productName;
         this.price = price;
         this.image = image;
@@ -49,10 +33,10 @@ public class Products {
         this.categoryName = categoryName;
         this.areaName = areaName;
         this.chipName = chipName;
+        this.supplierName = supplierName;
     }
 
-    public Products() {}
-
+    // Getters and Setters for main properties
     public int getId() {
         return id;
     }
@@ -93,6 +77,7 @@ public class Products {
         this.quantity = quantity;
     }
 
+    // Category, Area, Chip, and Supplier details
     public String getCategoryName() {
         return categoryName;
     }
@@ -117,6 +102,14 @@ public class Products {
         this.chipName = chipName;
     }
 
+    public String getSupplierName() {
+        return supplierName;
+    }
+
+    public void setSupplierName(String supplierName) {
+        this.supplierName = supplierName;
+    }
+
     public int getCategoryID() {
         return categoryID;
     }
@@ -139,5 +132,38 @@ public class Products {
 
     public void setAreaID(int areaID) {
         this.areaID = areaID;
+    }
+
+    public int getSupplierID() {
+        return supplierID;
+    }
+
+    public void setSupplierID(int supplierID) {
+        this.supplierID = supplierID;
+    }
+
+    // Stock-related properties
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    public int getStockSold() {
+        return stockSold;
+    }
+
+    public void setStockSold(int stockSold) {
+        this.stockSold = stockSold;
+    }
+
+    public double getStockAmount() {
+        return stockAmount;
+    }
+
+    public void setStockAmount(double stockAmount) {
+        this.stockAmount = stockAmount;
     }
 }

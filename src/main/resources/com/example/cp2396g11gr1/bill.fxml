@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="903.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.BillController">
    <children>
-      <TableView fx:id="billTable" layoutX="14.0" layoutY="62.0" prefHeight="520.0" prefWidth="395.0">
+      <TableView fx:id="billTable" layoutX="14.0" layoutY="62.0" prefHeight="520.0" prefWidth="395.0" styleClass="header1" stylesheets="@../resource/Admin.css">
         <columns>
           <TableColumn fx:id="billTableID" prefWidth="75.0" text="ID " />
           <TableColumn fx:id="billTableDate" prefWidth="75.0" text="Date time" />
@@ -19,7 +19,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TableView fx:id="DetailTable" layoutX="436.0" layoutY="62.0" prefHeight="520.0" prefWidth="442.0">
+      <TableView fx:id="DetailTable" layoutX="436.0" layoutY="62.0" prefHeight="520.0" prefWidth="442.0" styleClass="header1" stylesheets="@../resource/Admin.css">
         <columns>
           <TableColumn fx:id="DetailTableID" prefWidth="75.0" text="ID " />
           <TableColumn fx:id="DetailTableName" prefWidth="75.0" text="Produc name" />
@@ -30,7 +30,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="showDetailsButton" layoutX="275.0" layoutY="17.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="135.0" text="Show details" />
+      <Button fx:id="showDetailsButton" layoutX="275.0" layoutY="17.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="135.0" styleClass="btn-button" stylesheets="@../resource/Admin.css" text="Show details" textFill="WHITE" />
       <Label layoutX="70.0" layoutY="11.0" text="Bills">
          <font>
             <Font size="30.0" />

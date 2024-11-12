@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="693.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.StockController">
    <children>
-      <TableView fx:id="stockTable" layoutX="37.0" layoutY="66.0" prefHeight="520.0" prefWidth="641.0">
+      <TableView fx:id="stockTable" layoutX="14.0" layoutY="66.0" prefHeight="520.0" prefWidth="665.0" styleClass="header1" stylesheets="@../resource/Admin.css">
         <columns>
           <TableColumn fx:id="stockID" prefWidth="75.0" text="ID " />
           <TableColumn fx:id="stockProductName" prefWidth="75.0" text="Product Name" />

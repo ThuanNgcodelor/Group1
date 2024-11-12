@@ -15,6 +15,9 @@ import com.example.cp2396g11gr1.model.category.CategoryImple;
 import com.example.cp2396g11gr1.model.product.ProductDAO;
 import com.example.cp2396g11gr1.model.product.ProductImple;
 import com.example.cp2396g11gr1.model.product.Products;
+import com.example.cp2396g11gr1.model.supplier.Supplier;
+import com.example.cp2396g11gr1.model.supplier.SupplierDAO;
+import com.example.cp2396g11gr1.model.supplier.SupplierImpl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -62,7 +65,8 @@ public class AdminController {
     @FXML
     private TableColumn<Products, String> productTableCategory;
     @FXML
-    private TableColumn<Products, String> productTableChip;
+    private TableColumn<Products, String> productTableChip,productTableSupplier;
+
     @FXML
     private TableColumn<Products, Integer> productTableID;
     @FXML
@@ -81,6 +85,8 @@ public class AdminController {
     private TextField txtStock;
     @FXML
     private ComboBox<Category> comBoxCategory;
+    @FXML
+    private ComboBox<Supplier> comBoxSupplier;
     @FXML
     private ComboBox<Area> comBoxArea;
     @FXML
@@ -234,6 +240,7 @@ public class AdminController {
         ComBoxArea();
         ComBoxCategory();
         ComBoxChip();
+        ComBoxSupplier();
         showProducts();
         displayUsername();
         RoleComBoBox();
@@ -276,6 +283,7 @@ public class AdminController {
             ComBoxArea();
             ComBoxCategory();
             ComBoxArea();
+            ComBoxSupplier();
         } else if (event.getSource() == btnStaff) {
             home.setVisible(false);
             product.setVisible(false);
@@ -294,6 +302,7 @@ public class AdminController {
         productTableArea.setCellValueFactory(new PropertyValueFactory<>("areaName"));
         productTableCategory.setCellValueFactory(new PropertyValueFactory<>("categoryName"));
         productTableChip.setCellValueFactory(new PropertyValueFactory<>("chipName"));
+        productTableSupplier.setCellValueFactory(new PropertyValueFactory<>("supplierName"));
         productTable.setItems(productsObservableList);
     }
     @FXML
@@ -347,6 +356,7 @@ public class AdminController {
             Category category = comBoxCategory.getSelectionModel().getSelectedItem();
             Area area = comBoxArea.getSelectionModel().getSelectedItem();
             Chip chip = comBoxChip.getSelectionModel().getSelectedItem();
+            Supplier supplier = comBoxSupplier.getSelectionModel().getSelectedItem();
             double price = 0;
             try {
                 price = Double.parseDouble(txtPrice.getText());
@@ -387,6 +397,7 @@ public class AdminController {
                 newProducts.setQuantity(stock);
                 newProducts.setPrice(price);
                 newProducts.setImage(images);
+                newProducts.setSupplierID(supplier.getId());
                 ProductDAO productDAO = new ProductImple();
                 boolean added = productDAO.addProducts(newProducts);
                 if (added) {
@@ -495,6 +506,15 @@ public class AdminController {
             comBoxArea.setItems(areaObservableList);
         }
     }
+
+    private void ComBoxSupplier(){
+        if(comBoxSupplier != null){
+            SupplierDAO  supplierDAO = new SupplierImpl();
+            List<Supplier> suppliers = supplierDAO.GetAllSupplier();
+            ObservableList<Supplier> areaObservableList = FXCollections.observableList(suppliers);
+            comBoxSupplier.setItems(areaObservableList);
+        }
+    }
     private void ComBoxChip(){
         if(comBoxChip != null){
             ChipDAO chipDAO = new ChipImple();
@@ -540,6 +560,26 @@ public class AdminController {
     @FXML
     private void Category(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/cp2396g11gr1/Category.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void Supplier(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/cp2396g11gr1/supplier.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void Customer(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/cp2396g11gr1/customer.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = new Stage();
         Scene scene = new Scene(root);

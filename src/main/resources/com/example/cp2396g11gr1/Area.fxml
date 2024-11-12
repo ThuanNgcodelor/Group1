@@ -16,9 +16,9 @@
             <AnchorPane layoutX="335.0" layoutY="1.0" prefHeight="496.0" prefWidth="310.0" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
                <children>
                   <TextField fx:id="areaName" layoutX="40.0" layoutY="164.0" prefHeight="40.0" prefWidth="230.0" promptText="Enter the product type" stylesheets="@../resource/Admin.css" />
-                  <Button layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Delete supplier">
+                  <Button layoutX="42.0" layoutY="314.0" mnemonicParsing="false" onAction="#deleteArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Delete " textFill="WHITE">
                      <styleClass>
-                        <String fx:value="table-view" />
+                        <String fx:value="btn-button1" />
                         <String fx:value="nav-btn1" />
                      </styleClass>
                   </Button>
@@ -27,27 +27,22 @@
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Button layoutX="168.0" layoutY="248.0" mnemonicParsing="false" onAction="#updateArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Update supplier">
+                  <Button layoutX="168.0" layoutY="248.0" mnemonicParsing="false" onAction="#updateArea" prefHeight="35.0" prefWidth="100.0" styleClass="btn-button1" stylesheets="@../resource/Admin.css" text="Update" textFill="WHITE" />
+                  <Button layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#addArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Save" textFill="WHITE">
                      <styleClass>
                         <String fx:value="table-view" />
-                        <String fx:value="nav-btn1" />
+                        <String fx:value="btn-button" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="42.0" layoutY="248.0" mnemonicParsing="false" onAction="#addArea" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Add supplier">
+                  <Button layoutX="168.0" layoutY="314.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Refresh" textFill="WHITE">
                      <styleClass>
-                        <String fx:value="table-view" />
-                        <String fx:value="nav-btn1" />
-                     </styleClass>
-                  </Button>
-                  <Button layoutX="168.0" layoutY="314.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" stylesheets="@../resource/Admin.css" text="Refresh">
-                     <styleClass>
-                        <String fx:value="table-view" />
+                        <String fx:value="btn-button" />
                         <String fx:value="nav-btn1" />
                      </styleClass>
                   </Button>
                </children>
             </AnchorPane>
-            <TableView fx:id="table_area" layoutX="5.0" layoutY="70.0" prefHeight="422.0" prefWidth="330.0" stylesheets="@../resource/Admin.css">
+            <TableView fx:id="table_area" layoutY="70.0" prefHeight="432.0" prefWidth="335.0" styleClass="header1" stylesheets="@../resource/Admin.css">
                <columns>
                   <TableColumn fx:id="table_AreaID" prefWidth="107.99994039535522" text="AreaID" />
                   <TableColumn fx:id="table_areaName" prefWidth="212.7999496459961" text="Name" />

@@ -57,6 +57,14 @@ public class OrderController implements Initializable {
         ordertable.setItems(order_outObservableList);
         totalPrice();
     }
+
+    private void showAlert(Alert.AlertType alertType, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setContentText(message);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+    }
+
     @FXML
     private void hanhDeleteProduct(ActionEvent event) {
         Order_out orderOut = ordertable.getSelectionModel().getSelectedItem();
@@ -77,6 +85,7 @@ public class OrderController implements Initializable {
         if (success) {
             System.out.println("Order deleted successfully.");
             listOrder_out();
+            showAlert(Alert.AlertType.INFORMATION, "Deletion Successful", "The order was deleted successfully!");
         } else {
             System.out.println("Failed to delete order.");
             showAlert(Alert.AlertType.ERROR, "Deletion Error", "Failed to delete the order.");
@@ -207,8 +216,10 @@ public class OrderController implements Initializable {
         if (result) {
             System.out.println("Order placed successfully");
             listOrder_out();
+            showAlert(Alert.AlertType.INFORMATION, "Order Placed", "The order was placed successfully!");
         } else {
             System.out.println("Failed to place the order");
+            showAlert(Alert.AlertType.ERROR, "Order Placement Failed", "Failed to place the order.");
         }
     }
 

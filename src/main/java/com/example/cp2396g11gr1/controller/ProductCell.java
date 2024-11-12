@@ -56,10 +56,9 @@ public class ProductCell extends ListCell<Product> {
             String formattedPrice = currencyFormat.format(product.getPrice());
             Label priceLabel = new Label("Price: " + formattedPrice);
 
-            // Button "Thêm món"
+
             Button addButton = new Button("Add");
 
-            // Handle the button click event
             addButton.setOnAction(event -> {
                 int quantity = product.getStock();
                 if (quantity == 0) {
@@ -69,21 +68,20 @@ public class ProductCell extends ListCell<Product> {
 
                 Order_out ord_out = getOrderOut(product.getProductID());
                 if (ord_out != null) {
-                    // Product exists, update quantity and price
                     int updatedQuantity = ord_out.getQuantity() + 1;
                     int updatedPrice = ord_out.getPrice() / ord_out.getQuantity() * updatedQuantity;
                     updateOrderOut(product.getProductID(), updatedQuantity, updatedPrice, ord_out.getOrder_id());
-
-                    // Trừ đi số lượng sản phẩm trong stock
                 } else {
                     addProductToOrderOut(product);
                 }
-
                 ProductDAO productDAO = new ProductImple();
                 int newStock = product.getStock() - 1;
                 productDAO.updateProductStock(product.getProductID(), newStock);
                 product.setStock(newStock);
+
+                showAlert(Alert.AlertType.INFORMATION, "ADD successfully!");
             });
+
 
             // Create VBox to hold the product components
             VBox vbox = new VBox(10, imageView, nameLabel, priceLabel, addButton);

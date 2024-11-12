@@ -42,7 +42,7 @@ public class StaffController implements Initializable {
     private Button stocks;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        displayUsername();
     }
 
     @FXML
@@ -88,5 +88,16 @@ public class StaffController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
+    public void displayUsername() {
+        fullName.setText(String.valueOf(Data.fullName));
+    }
+    @FXML
+    private void Customer(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/cp2396g11gr1/customer.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
