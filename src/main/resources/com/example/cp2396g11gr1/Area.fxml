@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="646.0" stylesheets="@../resource/Admin.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.AreaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="646.0" stylesheets="@../resource/Admin.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cp2396g11gr1.controller.AreaController">
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="500.0" prefWidth="640.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
          <children>
@@ -22,7 +18,7 @@
                         <String fx:value="nav-btn1" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="42.0" layoutY="75.0" prefHeight="46.0" prefWidth="139.0" stylesheets="@../resource/Admin.css" text="Area">
+                  <Label layoutX="42.0" layoutY="75.0" prefHeight="46.0" prefWidth="139.0" stylesheets="@../resource/Admin.css" text="Origin ">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -44,7 +40,7 @@
             </AnchorPane>
             <TableView fx:id="table_area" layoutY="70.0" prefHeight="432.0" prefWidth="335.0" styleClass="header1" stylesheets="@../resource/Admin.css">
                <columns>
-                  <TableColumn fx:id="table_AreaID" prefWidth="107.99994039535522" text="AreaID" />
+                  <TableColumn fx:id="table_AreaID" prefWidth="107.99994039535522" text="ID" />
                   <TableColumn fx:id="table_areaName" prefWidth="212.7999496459961" text="Name" />
                </columns>
                <columnResizePolicy>

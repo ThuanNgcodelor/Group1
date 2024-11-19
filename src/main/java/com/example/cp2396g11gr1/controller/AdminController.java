@@ -432,6 +432,7 @@ public class AdminController {
             Category category = comBoxCategory.getSelectionModel().getSelectedItem();
             Area area = comBoxArea.getSelectionModel().getSelectedItem();
             Chip chip = comBoxChip.getSelectionModel().getSelectedItem();
+            Supplier supplier = comBoxSupplier.getSelectionModel().getSelectedItem();
             double price;
             try {
                 price = Double.parseDouble(txtPrice.getText());
@@ -465,6 +466,7 @@ public class AdminController {
                 selectedProduct.setAreaID(area.getId());
                 selectedProduct.setChipID(chip.getId());
                 selectedProduct.setCategoryID(category.getId());
+                selectedProduct.setSupplierID(supplier.getId());
                 selectedProduct.setQuantity(stock);
                 selectedProduct.setPrice(price);
                 selectedProduct.setImage(images);

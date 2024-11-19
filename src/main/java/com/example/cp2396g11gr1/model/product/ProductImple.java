@@ -80,7 +80,7 @@ public class ProductImple implements ProductDAO{
     }
 
     public boolean updateProducts(Products product) {
-        String sql = "UPDATE products SET productName = ?, price = ?, quantity = ?, areaID = ?, categoryID = ?, chipID = ?,supplierID = ?, image = ? WHERE id = ?";
+        String sql = "UPDATE products SET productName = ?, price = ?, quantity = ?, areaID = ?, categoryID = ?, chipID = ?, supplierID= ?, image = ? WHERE id = ?";
         try (Connection connection = MyConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
